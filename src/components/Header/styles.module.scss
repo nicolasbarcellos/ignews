@@ -1,0 +1,60 @@
+.headerContainer {
+  height: 5rem;
+  border-bottom: 1px solid var(--gray-800);
+}
+
+.headerContent {
+  height: 5rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+
+  nav {
+    margin-left: 5rem;
+    height: 5rem;
+
+    a {
+      display: inline-block;
+      position: relative;
+      padding: 0 0.5rem;
+      height: 5rem;
+      line-height: 5rem; // line height do mesmo tamanho do height vai deixar o item centralizado
+      color: var(--gray-300);
+
+      transition: color 0.2s;
+
+      & + a {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        color: var(--white);
+      }
+
+      &.active {
+        color: var(--white);
+        font-weight: bold;
+      
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 1px;
+          left: 0;
+          background: var(--yellow-500);
+          border-radius: 10px 10px 0px 0px;
+          height: 3px;
+          width: 100%;
+        }
+      }
+    }
+
+    & + button {
+      margin-left: auto;
+    }
+  }
+}
